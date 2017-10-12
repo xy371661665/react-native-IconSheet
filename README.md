@@ -1,53 +1,44 @@
+安装方法:
 
-# react-native-react-native-icon-sheet
+    npm install react-native-iconaction --save  或者
+    react-native install react-native-iconaction  或者
+    yarn add react-native-iconaction
 
-## Getting started
+使用方法:
 
-`$ npm install react-native-react-native-icon-sheet --save`
+    1.在头部引入组件
+    import ActionSheet from 'react-native-IconAction';
 
-### Mostly automatic installation
+    2.写入组件,一般写在最外层里面
+    <ActionSheet
+        bottonList={shareIcon}
+        marginV={19}
+        marginH={20}
+        ref={ref=>this.ActionSheet = ref}
+        onPress={this.selectSheet}
+    />
 
-`$ react-native link react-native-react-native-icon-sheet`
+    3.弹出调用this.ActionSheet.show();
 
-### Manual installation
+参数及方法
 
+    1.bottonList 按键数组,数组中每个元素是一个对象,对象中icon表示图标,text表示文字
 
-#### iOS
+    2.marginV 按钮在竖直方向距离容器的距离
 
-1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
-2. Go to `node_modules` ➜ `react-native-react-native-icon-sheet` and add `RNReactNativeIconSheet.xcodeproj`
-3. In XCode, in the project navigator, select your project. Add `libRNReactNativeIconSheet.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
-4. Run your project (`Cmd+R`)<
+    3.marginH 按钮在水平方向距离容器的距离
 
-#### Android
+    4.containStyle 整个组件全屏的Style
 
-1. Open up `android/app/src/main/java/[...]/MainActivity.java`
-  - Add `import com.reactlibrary.RNReactNativeIconSheetPackage;` to the imports at the top of the file
-  - Add `new RNReactNativeIconSheetPackage()` to the list returned by the `getPackages()` method
-2. Append the following lines to `android/settings.gradle`:
-  	```
-  	include ':react-native-react-native-icon-sheet'
-  	project(':react-native-react-native-icon-sheet').projectDir = new File(rootProject.projectDir, 	'../node_modules/react-native-react-native-icon-sheet/android')
-  	```
-3. Insert the following lines inside the dependencies block in `android/app/build.gradle`:
-  	```
-      compile project(':react-native-react-native-icon-sheet')
-  	```
+    5.style 容器的Style
 
-#### Windows
-[Read it! :D](https://github.com/ReactWindows/react-native)
+    6.cannelText 取消按钮的文字
 
-1. In Visual Studio add the `RNReactNativeIconSheet.sln` in `node_modules/react-native-react-native-icon-sheet/windows/RNReactNativeIconSheet.sln` folder to their solution, reference from their app.
-2. Open up your `MainPage.cs` app
-  - Add `using Cl.Json.RNReactNativeIconSheet;` to the usings at the top of the file
-  - Add `new RNReactNativeIconSheetPackage()` to the `List<IReactPackage>` returned by the `Packages` method
+    7.cannelRender 自定义取消组件
 
+    方法:
 
-## Usage
-```javascript
-import RNReactNativeIconSheet from 'react-native-react-native-icon-sheet';
+    1.show方法,弹出弹框方法
 
-// TODO: What do with the module?
-RNReactNativeIconSheet;
-```
-  
+    2.cannel方法,关闭弹框方法
+
